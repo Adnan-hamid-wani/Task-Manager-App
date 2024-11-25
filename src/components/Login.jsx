@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // Import Firebase Auth
-import { useNavigate, Link } from "react-router-dom"; // Import useNavigate hook
+import { auth } from "../firebase"; 
+import { useNavigate, Link } from "react-router-dom"; 
 import "../styles/Login.css";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LockClockRoundedIcon from "@mui/icons-material/LockClockRounded";
@@ -19,7 +19,6 @@ const getErrorMessage = (code) => {
     "auth/invalid-credential": "Invalid email or password . Please try again.",
   };
 
-  // Log unhandled errors during development for debugging
 
   return errorMessages[code] || "Something went wrong. Please try again.";
 };
@@ -28,12 +27,11 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // Use navigate instead of history
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Validate email format
     if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
       setError("Please enter a valid email address.");
       return;
@@ -44,7 +42,7 @@ const Login = () => {
       alert("Login successful!");
       navigate("/dashboard");
     } catch (err) {
-      setError(getErrorMessage(err.code)); // Map error code
+      setError(getErrorMessage(err.code)); 
     }
   };
 
