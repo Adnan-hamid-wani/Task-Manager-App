@@ -102,7 +102,6 @@ const Dashboard = () => {
     setEditingTask(null);
   };
 
-  // Inline styles for cleaner JSX
   const styles = {
     container: {
       backgroundImage:
@@ -168,7 +167,6 @@ const Dashboard = () => {
     <div style={styles.container}>
       <div style={styles.overlay}></div>
       <div style={styles.content}>
-        {/* Navbar */}
         <div style={styles.navbar}>
           <h2 style={{ margin: 0, fontWeight: "bold", color: "#333" }}>
             Task Manager
@@ -186,7 +184,6 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* Task List or Loader */}
         {loading ? (
           <div style={styles.loader}>
             <CircularProgress />
