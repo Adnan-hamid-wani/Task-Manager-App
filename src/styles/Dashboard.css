@@ -1,0 +1,105 @@
+
+.container {
+  background-image: url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(0px);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(134, 206, 235, 0.6);
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.searchInput {
+  flex: 1;
+  max-width: 400px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin: 0 20px;
+}
+
+.logoutButton {
+  background: rgb(247, 247, 247);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: rgba(249, 0, 0, 0.64);
+  gap: 5px;
+  max-width: 200px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 45%;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.welcomeMessage {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    background-size: auto 100%;
+    background-position: center top;
+  }
+
+  .searchInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .logoutButton {
+    width: 30px;
+    height: 30px;
+    font-size: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    border-radius: 30px;
+  }
+
+  .logout__icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+}
