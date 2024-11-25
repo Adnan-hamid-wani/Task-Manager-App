@@ -25,13 +25,13 @@ const AddTask = ({ addTask }) => {
     value={title}
     onChange={(e) => setTitle(e.target.value)}
     style={{
-      padding: "8px 40px 8px 30px", // Add extra padding on the right for the icon
+      padding: "8px 40px 8px 30px", 
       borderRadius: "6px",
       border: "none",
       background: "black",
       color: "white",
       marginBottom: "10px",
-      width: "100px", // Adjust width as needed
+      width: "100px", 
       marginRight:"10px",
       display:"flex",
       
@@ -41,12 +41,11 @@ const AddTask = ({ addTask }) => {
     style={{
       position: "absolute",
       top: "50%",
-      transform: "translateY(-70%)", // Vertically center the icon
-      color: "white", // Set the color of the icon
+      transform: "translateY(-70%)", 
+      color: "white", 
       marginLeft:"5px",
       height:"30px",
       widht:"20px"
- // Set the color o
 
     }}
   />
@@ -59,7 +58,7 @@ const AddTask = ({ addTask }) => {
     value={description}
     onChange={(e) => setDescription(e.target.value)}
     style={{
-      padding: "8px 40px 8px 30px", // Add extra padding on the right for the icon
+      padding: "8px 40px 8px 30px", 
       borderRadius: "6px",
       border: "none",
       background: "black",
@@ -74,12 +73,12 @@ const AddTask = ({ addTask }) => {
     style={{
       position: "absolute",
       top: "50%",
-      transform: "translateY(-70%)", // Vertically center the icon
-      color: "white", // Set the color of the icon
+      transform: "translateY(-70%)", 
+      color: "white", 
       marginLeft:"5px",
       height:"30px",
       widht:"20px"
- // Set the color of the icon
+
     }}
   />
 </div>
