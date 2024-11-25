@@ -12,7 +12,7 @@ const TaskUpdateForm = ({ task, onUpdate, onCancel }) => {
 
   return (
     <Modal
-      open={!!task} // Modal is open if `task` is not null
+      open={!!task} 
       onClose={onCancel}
       aria-labelledby="edit-task-modal"
       aria-describedby="modal-for-editing-task"
