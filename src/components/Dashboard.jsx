@@ -15,6 +15,7 @@ import TaskUpdateForm from "./TaskUpdateForm";
 import { useNavigate } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -102,73 +103,16 @@ const Dashboard = () => {
     setEditingTask(null);
   };
 
-  const styles = {
-    container: {
-      backgroundImage:
-        "url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      minHeight: "100vh",
-      position: "relative",
-    },
-    overlay: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(255, 255, 255, 0.6)",
-      backdropFilter: "blur(0px)",
-    },
-    content: {
-      position: "relative",
-      zIndex: 1,
-      padding: "20px",
-    },
-    navbar: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      backgroundColor: "rgba(134, 206, 235, 0.6)",
-      padding: "10px 20px",
-      marginBottom: "50px",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
-      borderRadius: "5px",
-    },
-    searchInput: {
-      flex: 1,
-      maxWidth: "400px",
-      padding: "8px 10px",
-      borderRadius: "20px",
-      border: "1px solid #ccc",
-      margin: "0 20px",
-    },
-    logoutButton: {
-      background: "red",
-      border: "none",
-      padding: "10px 15px",
-      borderRadius: "5px",
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      color: "black",
-      gap: "3px",
-    },
-    loader: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "200px",
-    },
-  };
-
   return (
-    <div style={styles.container}>
-      <div style={styles.overlay}></div>
-      <div style={styles.content}>
-        <div style={styles.navbar}>
-          <h2 style={{ margin: 0, fontWeight: "bold", color: "#333" }}>
+    <div className="container">
+      <div className="overlay"></div>
+      <div className="content">
+        {/* Navbar */}
+        <div className="navbar">
+          <h2
+            className="logo"
+            style={{ margin: 0, fontWeight: "bold", color: "#333" }}
+          >
             Task Manager
           </h2>
           <input
@@ -176,16 +120,19 @@ const Dashboard = () => {
             placeholder="Search tasks..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            style={styles.searchInput}
+            className="searchInput"
           />
-          <button onClick={handleLogout} style={styles.logoutButton}>
-            Logout
-            <LogoutRoundedIcon />
+          <button onClick={handleLogout} className="logoutButton">
+            <LogoutRoundedIcon className="logout__icon" />
           </button>
         </div>
 
+        {user && (
+          <div className="welcomeMessage">{`welcome : ${user.email}`}</div>
+        )}
+
         {loading ? (
-          <div style={styles.loader}>
+          <div className="loader">
             <CircularProgress />
           </div>
         ) : filteredTasks.length === 0 ? (
